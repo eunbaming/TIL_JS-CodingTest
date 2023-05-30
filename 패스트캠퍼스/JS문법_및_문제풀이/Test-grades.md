@@ -1,4 +1,4 @@
-# 세자리 수 곱셈 문제 풀이
+# 시험 성적 문제 풀이
 
 백준 9498 문제
 (https://www.acmicpc.net/problem/9498)
