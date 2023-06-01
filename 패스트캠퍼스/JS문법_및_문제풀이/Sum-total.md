@@ -13,26 +13,20 @@
 <br/>
 <br/>
 
-## 내가 쓴 코드 (X)
+## 내가 쓴 코드 (O)
 
 ```javascript
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().split("\n");
 
-let hour = Number(input[0].split(" ")[0]);
-let minute = Number(input[0].split(" ")[1]);
-let time = Number(input[1]);
+let num = Number(input[0]);
+let result = 0;
 
-if (miute + time >= 60) {
-  hour += 1;
-  minute = time - (60 - minute);
-  if (hour === 24) {
-    hour = 0;
-  }
-} else {
-  minute += time;
+for (let i = 1; i <= num; i++) {
+  result += i;
 }
-console.log(hour + " " + minute);
+
+console.log(result);
 ```
 
 <br/>
@@ -40,22 +34,37 @@ console.log(hour + " " + minute);
 
 ## 선생님 해설
 
+- 문자열을 수로 변환할 때 parseInt에 비하여 Number의 속도가 더 빠르게 동작한다.
+
 ### 문제 해결 아이디어
 
-- 입력으로 주어진 시각을 '분'의 형태로 바꾼다.
-- '분'이 주어졌을 때, 시각을 알려주는 기능을 작성한다.
+- 첫번째 방식 : 단순히 1부터 10,000까지의 값을 차례대로 더한다. 이 경우 시간복잡도 O(N)이다.
+- 두번째 방식 : 등차수열의 합 공식을 이용할 수 있다. 이 경우 시간복잡도 상수시간이다.
+  <br/>
+  등차수열의 제 1항부터 제 N항 까지의 합을 S<sub>N</sub>라고 하자.
+  첫째항이 a, 마지막 항이 m일 때
+  <br/>
+  S<sub>N</sub> = N(a + m) / 2
 
 ```javascript
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().split("\n");
 
-let [a, b] = input[0].split(" ").map(Number);
-let c = Number(input[1]);
+let n = Number(input[0]);
+let summary = 0;
 
-let totalMinute = a * 60 + b + c;
-totalMinute %= 1440; // 하루가 넘어가지 않도록 해준다.
-let hour = parseInt(totalMinute / 60);
-let minute = totalMinute % 60;
+for (let i = 1; i <= n; i++) {
+  summary += i;
+}
 
-console.log(hour + " " + minute);
+console.log(summary);
+```
+
+```javascript
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().split("\n");
+
+let n = Number(input[0]);
+
+console.log((n * (1 + n)) / 2);
 ```
