@@ -8,12 +8,13 @@
 
 ## 문제
 
-<a href="#"><img src="https://github.com/eunbaming/TIL_JS-CodingTest/assets/110072947/473c5563-c094-4f83-af17-3b2a8a2e1c66"/></a>
+<a href="#"><img src="https://github.com/eunbaming/TIL_JS-CodingTest/assets/110072947/6315295d-23ad-4869-95f9-16f9ca2269d7"/></a>
+<a href="#"><img src="https://github.com/eunbaming/TIL_JS-CodingTest/assets/110072947/c62c27f2-3ed4-4c49-ae09-a9f1657f6564"/></a>
 
 <br/>
 <br/>
 
-## 내가 쓴 코드 (OX)
+## 내가 쓴 코드 (X)
 
 ```javascript
 let fs = require("fs");
@@ -46,7 +47,7 @@ let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().split("\n");
 
 let maxValue = 0;
-let index = 0;
+let maxIndex = 0;
 for (let i = 0; i < 9; i++) {
   let data = Number(input[i]);
   if (maxValue < data) {
@@ -55,18 +56,18 @@ for (let i = 0; i < 9; i++) {
   }
 }
 
-console.log(maxValue + "\n" + maxIndex);
+console.log(maxValue);
+console.log(maxIndex);
+// 또는 console.log(maxValue + "\n" + maxIndex);
 ```
 
 ```javascript
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().split("\n");
 
-let n = Number(input[0]);
-let data = input[1].split(" ").map(Number);
+let data = input.map(Number);
+let maxValue = Math.max(...data);
 
-let min = data.reduce((a, b) => Math.min(a, b));
-let max = data.reduce((a, b) => Math.max(a, b));
-
-console.log(min, max);
+console.log(maxValue);
+console.log(data.indexOf(maxValue) + 1);
 ```
