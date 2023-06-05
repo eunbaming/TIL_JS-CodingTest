@@ -39,7 +39,7 @@ console.log(result);
 
 ### 문제 해결 아이디어
 
-- 중복되지 않은 수를 찾기 위해 집합자료형인 set함수를 사용한다.
+- for~of문을 사용한다.
 
 ```javascript
 let fs = require("fs");
