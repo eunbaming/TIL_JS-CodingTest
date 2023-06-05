@@ -42,7 +42,6 @@ for (let i = 1; i < n; i++) {
 ### 문제 해결 아이디어
 
 - 한 줄씩 읽어들이면서, 문자열 s에 포함된 문자를 r번 반복한다.
-- 사용된 메소드 : charAt(), repeat()
 
 ```javascript
 let fs = require("fs");
