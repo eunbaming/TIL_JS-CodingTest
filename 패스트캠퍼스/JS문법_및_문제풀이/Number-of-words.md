@@ -8,9 +8,8 @@
 
 ## 문제
 
-<a href="#"><img src="https://github.com/eunbaming/TIL_JS-CodingTest/assets/110072947/8427ed13-2887-4c46-b145-2f6140b05873"/></a>
-<a href="#"><img src="https://github.com/eunbaming/TIL_JS-CodingTest/assets/110072947/911ee08a-6290-4718-8400-d3c92a26ab64"/></a>
-<a href="#"><img src="https://github.com/eunbaming/TIL_JS-CodingTest/assets/110072947/a7f32654-5910-4f67-aa0f-a7630a33d973"/></a>
+<a href="#"><img src="https://github.com/eunbaming/TIL_JS-CodingTest/assets/110072947/8e2c239e-fac2-48c0-b5d2-018142302044"/></a>
+<a href="#"><img src="https://github.com/eunbaming/TIL_JS-CodingTest/assets/110072947/bdf06d58-d9f2-4e97-aede-4fbe2d142b94"/></a>
 
 <br/>
 <br/>
