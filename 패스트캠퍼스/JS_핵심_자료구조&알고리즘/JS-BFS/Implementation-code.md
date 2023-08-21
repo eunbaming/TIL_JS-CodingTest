@@ -1,6 +1,10 @@
 # BFS 구현
 
+<br/>
+<br/>
+
 ```javascript
+// Queue 구현
 class Queue {
   constructor() {
     this.items = {};
@@ -29,18 +33,19 @@ class Queue {
   }
 }
 
-let graph = [[], [2, 3, 4], [1], [1, 5, 6], [1, 7], [3, 8], [3], [4], [5]];
-
-let visited = new Array(9).fill(false);
-
+// BFS 메서드 정의
 function bfs(graph, start, visited) {
   let queue = new Queue();
   queue.enqueue(start);
+  // 현재 노드 방문 처리
   visited[start] = true;
-  while (queue.getLength() != 0) {
+  // 큐가 빌 때까지 반복
+  while (queue.getLength() !== 0) {
+    // 큐에서 하나의 원소를 뽑아 출력하기
     let v = queue.dequeue();
     console.log(v);
-    for (let i of graph[v]) {
+    // 아직 방문하지 않은 인접한 원소들을 큐에 삽입
+    for (i of graph[v]) {
       if (!visited[i]) {
         queue.enqueue(i);
         visited[i] = true;
@@ -49,7 +54,12 @@ function bfs(graph, start, visited) {
   }
 }
 
-bfs(graph, 1, visited);
+// 각 노드가 연결된 정보를 표현
+let graph = [[], [2, 3, 4], [1], [1, 5, 6], [1, 7], [3, 8], [3], [4], [5]];
 
-// 실행 결과 : 1 2 3 4 5 6 7 8
+// 각 노드가 방문된 정보를 표현
+let visited = new Array(9).fill(false);
+
+// 정의된 BFS 함수 호출
+bfs(graph, 1, visited);
 ```
